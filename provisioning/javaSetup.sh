@@ -7,10 +7,6 @@
 # Modified for Vagrant: scott.lindsey@sailpoint.com
 # ###########################################################################
 
-# You must setup some environment variables.  This includes what 
-# versions of Java we will be installing.  See the Env script for details.
-. /vagrant/scripts/setupEnv.sh
-
 echo Performing Java JDK/JVM installation for Linux...
 
 # ###########################################################################

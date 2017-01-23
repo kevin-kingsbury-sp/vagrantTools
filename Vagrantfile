@@ -52,7 +52,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   vb.gui = true
   #
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
   #
   # View the documentation for the provider you're using for more
@@ -62,5 +62,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, host: 8081, guest: 8080
   config.vm.network :forwarded_port, host: 9000, guest: 8000
 
-  config.vm.provision :shell, :path=> "scripts/bootstrap.sh", privileged: false
+  config.vm.provision :shell, :path=> "setupEnv.sh", args: "bootstrap.sh", privileged: false
 end

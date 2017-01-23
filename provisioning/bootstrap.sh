@@ -1,12 +1,5 @@
 #!/bin/sh
-# Main bootstrap file for the box
-# TODO - Add a separate log for debugging and install messages
-
-SCRIPTS_DIR=/vagrant/scripts
-export SCRIPTS_DIR
-
-# Setup the environment variables
-. $SCRIPTS_DIR/setupEnv.sh
+# Main bootstrap file for configuring the box
 
 if [[ "$UPDATEOS" == "true" ]] ; then
    # Update the base centos packages - TODO should we do this?
@@ -31,13 +24,13 @@ sudo yum -y install libgcc_s.so.1
 sudo yum -y install libXfont
 
 # Install JDK
-sudo $SCRIPTS_DIR/javaSetup.sh
+sudo -E $SCRIPTS_DIR/javaSetup.sh
 
 # Install Tomcat
 $SCRIPTS_DIR/tomcatSetup.sh
 
 # Install MySQL
-sudo $SCRIPTS_DIR/mysqlSetup.sh
+sudo -E $SCRIPTS_DIR/mysqlSetup.sh
 
 # Install IdentityIQ
 if [[ "$INSTIIQ" == "true" ]] ; then

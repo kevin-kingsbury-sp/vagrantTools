@@ -11,10 +11,6 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-# Start off by setting some environment variables.  This tells us if we should
-# skip the MySQL installation and configuration type entirely.
-. /vagrant/scripts/setupEnv.sh
-
 # Skip the MySQL setup if we are not using a MySQL database in our deployment
 if [[ ! "$IIQDBYPE" == "mysql" ]] ; then
    echo "The IIQDBYPE is not mysql, it is: '$IIQDBYPE', skipping MySQL setup."

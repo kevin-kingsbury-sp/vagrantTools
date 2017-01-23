@@ -4,9 +4,6 @@
 # ###########################################################################
 # Need to make min/max/perm size configurable from properties file
 
-# Start off by setting some environment variables...
-# . ./setupEnv.sh
-
 echo Installing Tomcat
 
 # Build out an directory structure to house IIQ and its accessories.

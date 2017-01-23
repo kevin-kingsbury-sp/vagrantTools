@@ -3,9 +3,6 @@
 # A shell script to import the IIQ demo data.
 # ###########################################################################
 
-# Start off by setting some environment variables...
-# . ./setupEnv.sh
-
 echo Importing IIQ demo data
 cd ${TCTHOME}/webapps/${WEBAPPDIR}/
 jar -xvf ${DEMODATAZIP}
